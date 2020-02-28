@@ -24,5 +24,8 @@ namespace AzureStorageTest
         public string BookName { get; set; }
         public string Author { get; set; }
         public string Publisher { get; set; }
+
+        public override string ToString()
+            => $"[{PartitionKey}:{RowKey}] - {BookId.ToString()} : {BookName} by {Author}, Publ.:{Publisher}";
     }
 }
