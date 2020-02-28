@@ -9,11 +9,11 @@ namespace AzureStorageTest
         static  void Main(string[] args)
         {
             string partition = "APress";
-            string row = "1";
+            string row = "2";
 
-            //TestAddWithUnitOfWork(partition, row);
+            TestAddWithUnitOfWork(partition, row);
             //TestFindAndUpdateWithUnitOfWork(partition, row, "Rami Vemula");
-            TestDeleteWithUnitOfWork(partition, row);
+            //TestDeleteWithUnitOfWork(partition, row);
             Console.ReadLine();
 
         }
