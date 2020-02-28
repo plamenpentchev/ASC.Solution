@@ -84,17 +84,14 @@ namespace AzureStorageTest
         {
             CloudTable table =  this.tableClient.GetTableReference(typeof(T).Name);
             await table.CreateIfNotExistsAsync();
+            if (typeof(IAuditTracker).IsAssignableFrom(typeof(T)))
+            {
+                var auditTable = this.tableClient.GetTableReference($"{typeof(T).Name}Audit");
+                await auditTable.CreateIfNotExistsAsync();
+            }
         }
 
        
-
-   
-
-      
-
-
-
-
         /// <summary>
         /// custom rollback logic
         /// performs delete for a Create operation

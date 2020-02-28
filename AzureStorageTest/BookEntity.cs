@@ -8,7 +8,7 @@ namespace AzureStorageTest
     /// a book entity that will be used to perform
     /// sample data operations against the Storage emulator
     /// </summary>
-    class BookEntity:BaseEntity
+    class BookEntity:BaseEntity, IAuditTracker
     {
         public BookEntity()
         {
